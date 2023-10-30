@@ -2,9 +2,11 @@
 // then press Enter. You can now see whitespace characters in your code.
 
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args)
         throws IOException
@@ -25,16 +27,31 @@ public class Main {
                 System.out.println(area + "\n");
             }
 
-            JButton button= new JButton("Click Me!");
+            boolean clicks=false;
+            if(clicks) {
+                new ClicksCount();
+            }
 
-            new ClicksCount();
+            Scanner sc=new Scanner(new File("credit_card_fraud.csv"));
 
-            // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        /*for (int i = 1; i <= 5; i++) {
+            sc.useDelimiter(",");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }*/
+            sc.nextLine();
+            while(sc.hasNext()){
+                sc.next();
+                System.out.print("Transaction Amount: "+sc.next()+ ", ");
+                sc.next();
+                sc.next();
+                sc.next();
+                sc.next();
+                sc.next();
+                sc.next();
+                System.out.println("Card Type: " +sc.next());
+                sc.nextLine();
+
+
+            }
+            sc.close();
+
         }
     }
