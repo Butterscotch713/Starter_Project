@@ -33,6 +33,8 @@ public class Main {
             }
 
             Scanner sc=new Scanner(new File("credit_card_fraud.csv"));
+            //file from https://www.kaggle.com/datasets/teamincribo/credit-card-fraud/
+            //kaggle data sets are free-use
 
             sc.useDelimiter(",");
 
