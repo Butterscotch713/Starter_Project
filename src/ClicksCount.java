@@ -15,20 +15,20 @@ class ClicksCount implements ActionListener{
         JButton button1 = new JButton("Add 1");
         JButton button2 = new JButton("Multiply");
         JButton button3 =new JButton("X");
-        JButton piazza = new JButton("Piazza");
+        JButton wikipedia = new JButton("Wikipedia");
         button1.addActionListener(this);
         button2.addActionListener(this::secondButton);
         button3.addActionListener(this::end);
-        piazza.addActionListener(this::openPiazza);
+        wikipedia.addActionListener(this::openWiki);
 
 
         frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
         button1.setBounds(100,100,100,100);
         button2.setBounds(100, 200, 100, 100);
         button3.setBounds(400, 0, 30, 30);
-        piazza.setBounds(100, 300, 100, 100);
-        piazza.setForeground(Color.BLUE);
-        piazza.setBackground(Color.LIGHT_GRAY);
+        wikipedia.setBounds(200, 100, 100, 100);
+        wikipedia.setForeground(Color.BLUE);
+        wikipedia.setBackground(Color.LIGHT_GRAY);
         button3.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
         button3.setHorizontalAlignment(SwingConstants.CENTER);
         button3.setBackground(Color.RED);
@@ -38,8 +38,8 @@ class ClicksCount implements ActionListener{
         frame.add(button1);
         frame.add(button2);
         frame.add(button3);
-        frame.add(piazza);
-        frame.setTitle("Multiple Options");
+        frame.add(wikipedia);
+        frame.setTitle("Different Buttons");
 
         frame.getRootPane().setDefaultButton(button1); // sets default button
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,9 +54,9 @@ class ClicksCount implements ActionListener{
         System.out.println("You have clicked the ACTIVE button " + count + " times");
     }
 
-    public void openPiazza(ActionEvent p){
+    public void openWiki(ActionEvent p){
         try {
-            Desktop.getDesktop().browse(new URL("https://piazza.com/class/lle9d0gtsw016b").toURI());
+            Desktop.getDesktop().browse(new URL("https://en.wikipedia.org/wiki/Main_Page").toURI());
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         } catch (URISyntaxException ex) {
